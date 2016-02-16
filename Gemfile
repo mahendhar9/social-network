@@ -45,5 +45,7 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
+gem 'rmagick', '2.13.2'
+gem 'carrierwave'
 gem 'devise'
 

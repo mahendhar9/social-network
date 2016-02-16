@@ -2,6 +2,11 @@ body {
   padding-top: 70px;
 }
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #fff;
+}
+
 .navbar-default {
   background-color: darken(#19b698, 10%);
   border-color: #19b698;
@@ -36,7 +41,24 @@ body {
     &:hover, &:focus, &:active {
       color: #fff;
     }
+  }
 
+  .nav-profile-pic {
+    height: 45px;
+    margin-top: 3px;
+    margin-right: 5px;
+  }
+
+  .dropdown-toggle {
+    padding: 0;
+  }
+
+  .dropdown-menu {
+    margin-top: 3px !important;
+
+    .divider {
+      margin: 5px 0;
+    }
   }
 }
 
