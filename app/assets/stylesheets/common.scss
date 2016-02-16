@@ -62,7 +62,12 @@ body {
   }
 }
 
-
+.alert {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 1;
+}
 
 .vh-center {
   height: 70vh;
