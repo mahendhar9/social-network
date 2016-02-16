@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  padding-top: 54px;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -70,22 +70,22 @@ body {
 }
 
 .vh-center {
-  height: 70vh;
+  height: 81vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .form-width {
-  width: 400px;
+  width: 500px;
 }
 
-.submit-btn {
+.submit-btn.btn-default {
   width: 100%;
   color: #fff;
   background-color: #16a085;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     color: #fff;
     background-color: #16a085;
   }
