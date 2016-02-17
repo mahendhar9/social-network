@@ -38,4 +38,18 @@ class User < ActiveRecord::Base
     self.inverse_friendships.where(state: "pending")
   end
 
+  def friendship_status(user)
+    friendship = Friendship.where(user: [self.id, user.id], friend: [self.id, user.id])
+    unless friendship.any?
+      return "Not Friends"
+    else 
+      if friendship.first.state == "active"
+        return "Friends"
+      elsif friendship.first.user == self
+        return "Requested"
+      else 
+        return "Pending"
+      end
+    end
+  end
 end
