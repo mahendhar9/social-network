@@ -1,0 +1,10 @@
+<div class="col-md-3">
+  <div class="thumbnail">
+    <%= link_to user_path(user.username) do %>
+    <%= image_tag user.avatar.url, class: "img-responsive" %>
+    <% end %>
+    <div class="caption text-center">
+      <h3><%= user.username %></h3>
+    </div>
+  </div>
+</div>
