@@ -52,4 +52,8 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def find_friendship_with(user)
+    Friendship.where(user: [self.id, user.id], friend: [self.id, user.id]).first
+  end
 end

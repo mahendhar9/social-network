@@ -5,7 +5,7 @@
     <% end %>
     <div class="caption text-center">
       <h3><%= user.username %></h3>
-      <button class="btn btn-success btn-sm"><%= friendship_status_button(user) %></button>
+      <%= friendship_status_button(user) if current_user %>
     </div>
   </div>
 </div>

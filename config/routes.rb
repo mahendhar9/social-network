@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :users, only: [:index, :show]
+  resources :friendships, only: [:create, :update, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

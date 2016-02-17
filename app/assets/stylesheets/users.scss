@@ -13,6 +13,15 @@
   }
 
   .btn-success {
-    background-color: seagreen;
+    background-color: transparent;
+    border: 2px solid seagreen;
+    color: seagreen;
+    font-weight: bold;
+    transition: all 0.3s ease-in 0s;
+
+    &:hover {
+      background-color: seagreen;
+      color: #fff;
+    }
   }
 }
