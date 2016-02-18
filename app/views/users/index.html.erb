@@ -1,10 +1,10 @@
 <div class="jumbotron text-center">
   <h2>People</h2>
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default">Everyone</button>
-    <button type="button" class="btn btn-default">Friends</button>
-    <button type="button" class="btn btn-default">Requested</button>
-    <button type="button" class="btn btn-default">Pending</button>
+    <%=link_to "Everyone", users_path, class: "btn btn-default #{'active' unless params[:show]}" %>
+    <%=link_to "Friends (#{@friends_count})", users_path(show: "friends"), class: "btn btn-default #{'active' if params[:show] == 'friends'}" %>
+    <%=link_to "Requested (#{@pending_sent_requests_count})", users_path(show: "requested"), class: "btn btn-default #{'active' if params[:show] == 'requested'}" %> 
+    <%=link_to "Pending (#{pending_received_requests_count})", users_path(show: "pending"), class: "btn btn-default #{'active' if params[:show] == 'pending'}" %>
   </div>
 </div>
 
