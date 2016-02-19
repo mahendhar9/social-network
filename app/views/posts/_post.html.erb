@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= link_to user_path(post.user.username) do %>
+    <%= image_tag post.user.avatar.url(:thumb) %> <%= post.user.username %>
+    <% end %> posted this about <%= time_ago_in_words(post.created_at) %> ago.
+  </div>
+  <div class="panel-body">
+    <%= post.content %>
+  </div>
+</div>

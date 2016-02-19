@@ -1,0 +1,4 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :content, label: false, required: true %>
+  <%= f.button :submit, "Post", class: "btn submit-btn" %>
+<% end %>
