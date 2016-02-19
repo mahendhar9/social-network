@@ -48,4 +48,5 @@ gem 'simple_form'
 gem 'rmagick', '2.13.2'
 gem 'carrierwave'
 gem 'devise'
+gem 'public_activity'
 
