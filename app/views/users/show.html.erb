@@ -20,14 +20,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-
+      <div class="panel panel-default">
+        <div class="panel-heading"><strong>Friends (<%= @user.active_friends.size %>)</strong></div>
+        <div class="panel-body">
+          <% (@user.active_friends).each do |friend| %>
+          <%= link_to user_path(friend.username) do %>
+          <%= image_tag friend.avatar.url(:thumb), class: "show-friends-pic" %>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="col-md-4">
 
     </div>
     <div class="col-md-4">
       <div class="panel panel-default">
-      <div class="panel-heading">Activity</div>
+        <div class="panel-heading"><strong>Activity</strong></div>
         <div class="panel-body">
           <%= render_activities(@activities) %>
         </div>
