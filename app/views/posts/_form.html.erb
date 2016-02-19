@@ -1,4 +1,4 @@
 <%= simple_form_for @post do |f| %>
-  <%= f.input :content, label: false, required: true %>
+  <%= f.input :content, label: false, placeholder: "You can also post image/video by pasting the URL here.", required: true %>
   <%= f.button :submit, "Post", class: "btn submit-btn" %>
 <% end %>

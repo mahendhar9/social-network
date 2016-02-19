@@ -31,11 +31,11 @@
               <p class="text-center"><strong>Bio: </strong></p>
             </div>
             <div class="col-md-6">
-            <p><%= @user.age %></p>
-            <p><%= @user.gender %></p>
+              <p><%= @user.age %></p>
+              <p><%= @user.gender %></p>
             </div>
             <div class="row">
-            <p><%= @user.bio %></p>
+              <p><%= @user.bio %></p>
             </div>
           </div>
         </div>
@@ -55,13 +55,14 @@
     </div>
 
     <div class="col-md-6">
+      <% if current_user == @user %>
       <div class="panel panel-success">
         <div class="panel-heading text-center"><strong>What's on your mind?</strong></div>
         <div class="panel-body">
           <%= render 'posts/form' %>
-
         </div>
       </div>
+      <% end %>
       <%= render @posts %>
     </div>
     <div class="col-md-3">
