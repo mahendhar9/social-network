@@ -7,6 +7,7 @@
       <% else %>
       <li>
         <% end %>
+        <% if activity.trackable %>
         <div class="timeline-badge">
           <%= image_tag activity.owner.avatar.url(:thumb), class: "img-responsive img-circle" %>
         </div>
@@ -16,15 +17,15 @@
             <small><%= time_ago_in_words(activity.created_at) %> ago</small>
           </div>
           <div class="timeline-body">
-            <% if activity.trackable %>
             <% if activity.trackable_type == "Post" %>
             <%= raw(activity.trackable.content_html) %>
             <% else %>
             <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> is now friends with <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
             <% end %>
-            <% end %>
           </div>
         </div>
+        <% end %>
+        
       </li>
       <% end %>
       <% end %>
