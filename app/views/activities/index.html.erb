@@ -1,0 +1,32 @@
+<div class="container">
+  <ul class="timeline">
+    <% @activities.each_with_index do |activity, index| %>
+    <% unless activity.trackable_type == "Friendship" && activity.owner == current_user %>
+    <% if (index%2 == 0) %>
+    <li class="timeline-inverted">
+      <% else %>
+      <li>
+        <% end %>
+        <div class="timeline-badge">
+          <%= image_tag activity.owner.avatar.url(:thumb), class: "img-responsive img-circle" %>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title"><%= link_to activity.owner.username, user_path(activity.owner.username) %></h4>
+            <small><%= time_ago_in_words(activity.created_at) %> ago</small>
+          </div>
+          <div class="timeline-body">
+            <% if activity.trackable %>
+            <% if activity.trackable_type == "Post" %>
+            <%= raw(activity.trackable.content_html) %>
+            <% else %>
+            <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> is now friends with <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>

@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
         <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Timeline", root_path %></li>
+        <li class="<%= 'active' if current_page?(activities_path) %>"><%= link_to "Timeline", activities_path %></li>
         <li class="<%= 'active' if current_page?(users_path) %>">
           <%= link_to users_path do %>
             <span>People<span class="badge"><%= pending_received_requests_count if pending_received_requests_count > 0 %></span></span>
